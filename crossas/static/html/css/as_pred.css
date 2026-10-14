@@ -1,0 +1,97 @@
+* { box-sizing: border-box; }
+:root {
+    --bg: #f4f7f9;
+    --surface: #ffffff;
+    --border: #dbe4ea;
+    --text: #1e2933;
+    --muted: #6d7f89;
+    --accent: #245f4d;
+    --accent-hover: #1c4f40;
+}
+body {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+.page { max-width: 1180px; margin: 0 auto; padding: 28px 24px 50px; }
+.hero {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 30px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 28px rgba(20, 45, 60, 0.06);
+}
+.hero h1 { margin: 0 0 8px; font-size: 34px; letter-spacing: -0.6px; }
+.hero h1 span { font-size: 14px; font-weight: 700; color: #4c7a69; vertical-align: middle; }
+.hero p { margin: 0; color: #60727e; line-height: 1.55; }
+.tabs { display: flex; gap: 8px; margin: 0 0 18px; flex-wrap: wrap; }
+.tabs button {
+    border: 1px solid #cad6dd;
+    background: #fff;
+    color: #40515d;
+    border-radius: 10px;
+    padding: 11px 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.tabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 5px 18px rgba(20, 45, 60, 0.045);
+}
+.card h2 { margin: 0 0 18px; font-size: 19px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; margin-bottom: 7px; color: #4b5f6b; font-size: 13px; font-weight: 750; }
+.form-group select,
+.form-group input[type="number"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px 11px;
+    border: 1px solid #cbd8df;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    color: var(--text);
+}
+button.primary, button.secondary {
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+button.primary { width: 100%; border: none; background: #26735b; color: #fff; }
+button.primary:hover { background: var(--accent-hover); }
+button.secondary { border: 1px solid #b9c9d2; background: #fff; color: #35505d; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+.help, .muted { color: var(--muted); font-size: 13px; line-height: 1.6; }
+.error-box { background: #fff1f1; color: #9f3030; border: 1px solid #efc1c1; padding: 12px 14px; border-radius: 9px; margin-bottom: 18px; }
+.result-meta { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.result-meta > div { background: #f7fafb; border: 1px solid #e3eaee; padding: 13px; border-radius: 10px; }
+.result-meta span, .probability-box span, .summary-grid span { display: block; color: #71838d; font-size: 12px; margin-bottom: 6px; }
+.result-meta strong { font-size: 14px; word-break: break-word; }
+.prediction-label { color: #244f41; }
+.probability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.probability-box { border: 1px solid #dfe8e4; background: #fbfdfc; border-radius: 11px; padding: 17px; }
+.probability-box strong { display: block; font-size: 28px; letter-spacing: -0.4px; color: #245f4d; margin-bottom: 3px; }
+.probability-box small { color: #819098; font-size: 12px; }
+.card-header-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.summary-grid { display: grid; grid-template-columns: repeat(3, minmax(100px, 160px)); gap: 10px; margin: 4px 0 16px; }
+.summary-grid > div { background: #f7fafb; border: 1px solid #e3eaee; border-radius: 9px; padding: 10px 12px; }
+.summary-grid strong { font-size: 18px; }
+.table-wrap { overflow-x: auto; border: 1px solid #dde6eb; border-radius: 9px; }
+table { width: 100%; border-collapse: collapse; min-width: 980px; font-size: 12px; }
+th, td { padding: 9px 10px; border-bottom: 1px solid #e7edf0; text-align: left; white-space: nowrap; }
+th { background: #f5f8fa; color: #435965; position: sticky; top: 0; }
+.table-note { padding: 10px; }
+@media (max-width: 800px) {
+    .grid-two, .result-meta, .probability-grid { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: repeat(3, 1fr); }
+    .page { padding: 16px; }
+}

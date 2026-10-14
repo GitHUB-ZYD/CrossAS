@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crossas"
+version = "1.0.0"
+description = "Cross-species allele-specific variant prediction using fine-tuned genomic language models"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+]
+
+[project.scripts]
+crossas = "crossas.cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["crossas*"]
+
+[tool.setuptools.package-data]
+crossas = [
+    "backbones/dnabert2/*.json",
+    "backbones/dnabert2/LICENSE",
+    "static/html/*.html",
+    "static/html/component/*.jsx",
+    "static/html/css/*.css",
+    "static/html/data/*.js",
+    "static/html/js/*.js",
+]
