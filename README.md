@@ -69,39 +69,6 @@ crossas serve -h
 
 资源仓库：[Ancle666/CrossAS](https://huggingface.co/datasets/Ancle666/CrossAS/tree/main)
 
-在 **CrossAS 项目根目录**运行以下命令，分别创建目标目录并下载所需资源。所有文件均保存到 `resources/` 对应位置，下载命令使用 `wget -c -O` 支持断点续传并指定本地文件名。
-
-```bash
-# human-promoter 模型权重
-mkdir -p resources/fine_tuned_models/human_promoter
-wget -c -O resources/fine_tuned_models/human_promoter/pytorch_model.bin \
-'https://huggingface.co/datasets/Ancle666/CrossAS/resolve/main/resources/fine_tuned_models/human_promoter/pytorch_model.bin?download=true'
-
-# human-enhancer 模型权重
-mkdir -p resources/fine_tuned_models/human_enhancer
-wget -c -O resources/fine_tuned_models/human_enhancer/pytorch_model.bin \
- 'https://huggingface.co/datasets/Ancle666/CrossAS/resolve/main/resources/fine_tuned_models/human_enhancer/pytorch_model.bin?download=true'
-
-# pig-promoter 模型权重
-mkdir -p resources/fine_tuned_models/pig_promoter
-wget -c -O resources/fine_tuned_models/pig_promoter/pytorch_model.bin \
-  'https://huggingface.co/datasets/Ancle666/CrossAS/resolve/main/resources/fine_tuned_models/pig_promoter/pytorch_model.bin?download=true'
-
-# pig-enhancer 模型权重
-mkdir -p resources/fine_tuned_models/pig_enhancer
-wget -c -O resources/fine_tuned_models/pig_enhancer/pytorch_model.bin \
-  'https://huggingface.co/datasets/Ancle666/CrossAS/resolve/main/resources/fine_tuned_models/pig_enhancer/pytorch_model.bin?download=true'
-
-# 人参考基因组（hg38）
-mkdir -p resources/genomes
-wget -c -O resources/genomes/hg38.fa.gz \
-  'https://huggingface.co/datasets/Ancle666/CrossAS/resolve/main/resources/genomes/hg38.fa.gz?download=true'
-
-# 猪参考基因组（Sscrofa11.1）
-mkdir -p resources/genomes
-wget -c -O resources/genomes/Sus_scrofa.Sscrofa11.1.dna.toplevel.fa.gz \ 'https://huggingface.co/datasets/Ancle666/CrossAS/resolve/main/resources/genomes/Sus_scrofa.Sscrofa11.1.dna.toplevel.fa.gz?download=true'
-```
-
 ### 4.1 配置模型及基因组路径
 
 下载完成后，检查项目根目录的 `crossas.ini`。示例配置：
